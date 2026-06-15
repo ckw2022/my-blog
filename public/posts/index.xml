@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on 我的知识库</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on 我的知识库</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;!--
+ * @Author: ckw
+ * @Date: 2026-06-15 18:48:59
+ * @LastEditors: ckw
+ * @LastEditTime: 2026-06-15 18:53:57
+ * @FilePath: \my-blog\content\posts\my-first-post.md
+ * @Description: 
+--&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;math-true&#34;&gt;title: &amp;ldquo;我的第一篇博客&amp;rdquo;
+date: 2026-06-15
+draft: false
+tags: [&amp;ldquo;入门&amp;rdquo;, &amp;ldquo;测试&amp;rdquo;]
+categories: [&amp;ldquo;教程&amp;rdquo;]
+math: true&lt;/h2&gt;
+&lt;h2 id=&#34;hello-world&#34;&gt;Hello World&lt;/h2&gt;
+&lt;p&gt;这是我的第一篇博客！&lt;/p&gt;
+&lt;h3 id=&#34;测试-latex-公式&#34;&gt;测试 LaTeX 公式&lt;/h3&gt;
+&lt;p&gt;欧拉公式：$e^{i\pi} + 1 = 0$&lt;/p&gt;
+&lt;h3 id=&#34;测试流程图&#34;&gt;测试流程图&lt;/h3&gt;
+&lt;div class=&#34;mermaid&#34;&gt;
+graph LR
+    A[写文章] --&gt; B[本地预览]
+    B --&gt; C[git push]
+    C --&gt; D[自动上线]
+&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
