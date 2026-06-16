@@ -412,12 +412,14 @@ hugo server -D
 5. 点 **Create repository**
 
 ⚠️如果文件夹重复，则要修改两个地方
+
 第一个地方，修改GitHub里面的链接地址
 1. 打开 [github.com/new](https://github.com/new)
 2. Repository name 填：`my-blog`
 3. 选择 **Public**
 4. 其他选项都不勾
 5. 点 **Create repository**
+
 第二个地方，``hugo.toml`` 里的 baseURL改为
 ```powershell
 baseURL = "https://ckw2022.github.io/my-blog/"
