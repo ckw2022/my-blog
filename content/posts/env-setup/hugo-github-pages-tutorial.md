@@ -573,6 +573,62 @@ content/posts/
 
 ---
 
+## 在新电脑上继续写博客
+
+换了电脑或重装了系统，不需要重新搭建博客，只要把 GitHub 上的仓库克隆下来就能继续写。
+
+### 1. 安装必要工具
+
+新电脑上需要先装好 Scoop、Hugo 和 Git，和之前一样：
+
+```powershell
+# 安装 Scoop
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+
+# 安装 Hugo 和 Git
+scoop install hugo-extended git
+```
+
+### 2. 克隆博客仓库
+
+```powershell
+cd E:\repository\
+git clone --recurse-submodules https://github.com/你的用户名/你的仓库名.git
+cd my-blog
+```
+
+`--recurse-submodules` 会同时把 PaperMod 主题一起拉下来。如果忘了加这个参数，主题文件夹会是空的，需要手动补拉：
+
+```powershell
+git submodule init
+git submodule update
+```
+
+### 3. 配置 Git 身份
+
+```powershell
+git config --global user.name "你的GitHub用户名"
+git config --global user.email "你的GitHub注册邮箱"
+```
+
+### 4. 验证并开始写作
+
+```powershell
+# 本地预览，确认一切正常
+hugo server -D
+
+# 之后就和平时一样写文章、推送
+hugo new posts/新文章.md
+git add .
+git commit -m "add 新文章"
+git push
+```
+
+> 💡 整个过程不需要重新配置 `hugo.toml`、`deploy.yml` 或 `extend_head.html`，这些文件都已经在仓库里了。克隆下来就是完整的博客环境。
+
+---
+
 ## 常见问题
 
 **Q：LaTeX 公式不渲染？**
