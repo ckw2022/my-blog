@@ -8,6 +8,17 @@ math: false
 summary: "手把手教你在 VS Code 中安装和配置 Claude Code AI编程助手，包括 Node.js 安装、代理设置、登录验证全流程。"
 ---
 
+> **本文定位**：从零安装 Claude Code，解决国内网络环境下的代理问题。安装完成后，如果想用 DeepSeek 替代官方模型降低成本，请看 [02-claude-code-deepseek](./02-claude-code-deepseek.md)。
+>
+> **AI 编程工具系列文章：**
+> | 编号 | 文章 | 一句话说明 |
+> |------|------|-----------|
+> | **01** | **本文** | **安装 Claude Code + 代理配置** |
+> | 02 | [Claude Code 接入 DeepSeek](./02-claude-code-deepseek.md) | 用 DeepSeek 模型跑 Claude Code 工具链 |
+> | 03 | [VS Code 中用 DeepSeek 处理文件](./03-vscode-deepseek-cline.md) | Claude Code 方案 vs Cline 插件方案 |
+> | 04 | [Python 调用 AI API 入门](./04-python-ai-api-basics.md) | 用代码调用各家 AI 模型 |
+> | 05 | [Codex 接入 DeepSeek](./05-codex-deepseek.md) | OpenAI Codex 接入 DeepSeek + 多模型切换 |
+
 ## Claude Code 是什么
 
 Claude Code 是 Anthropic 公司开发的 AI 编程助手，安装到 VS Code 后可以直接在编辑器里跟 AI 对话，让它帮你写代码、解释代码、找Bug。

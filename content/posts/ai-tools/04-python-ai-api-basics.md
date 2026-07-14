@@ -8,6 +8,17 @@ math: false
 summary: "手把手教你用 Python 在 VS Code 中调用 DeepSeek、OpenAI、通义千问等 AI 模型 API，从注册到跑通第一个请求。"
 ---
 
+> **本文定位**：从零开始用 Python 代码调用 AI 模型 API，适合想把 AI 能力集成到自己程序里的人。如果你只是想在编辑器里用 AI 辅助写代码（不写调用代码），看 [01](./01-claude-code-install.md)～[03](./03-vscode-deepseek-cline.md)；如果你用 Codex，看 [05](./05-codex-deepseek.md)。
+>
+> **AI 编程工具系列文章：**
+> | 编号 | 文章 | 一句话说明 |
+> |------|------|-----------|
+> | 01 | [安装 Claude Code](./01-claude-code-install.md) | 安装 Claude Code + 代理配置 |
+> | 02 | [Claude Code 接入 DeepSeek](./02-claude-code-deepseek.md) | 用 DeepSeek 模型跑 Claude Code 工具链 |
+> | 03 | [VS Code 中用 DeepSeek 处理文件](./03-vscode-deepseek-cline.md) | Claude Code 方案 vs Cline 插件方案 |
+> | **04** | **本文** | **用代码调用各家 AI 模型** |
+> | 05 | [Codex 接入 DeepSeek](./05-codex-deepseek.md) | OpenAI Codex 接入 DeepSeek + 多模型切换 |
+
 ## 什么是 API
 
 API（Application Programming Interface）就是**程序之间对话的接口**。

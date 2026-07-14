@@ -3,6 +3,22 @@
 > 目标：在 VS Code 里用 DeepSeek V4 Pro 读写文件、改代码、执行终端命令，效果与 Claude Code 一致。
 > 提供两种方案，按需选择。
 
+> **本文定位**：聚焦"在 VS Code 中用 DeepSeek 处理文件"这个具体需求，提供两种方案的快速对比和配置。方案 A（Claude Code）的详细原理和逐行解释见 [02-claude-code-deepseek](./02-claude-code-deepseek.md)，方案 B（Cline 插件）在本文完整展开。
+>
+> **与其他文章的区别**：
+> - [01](./01-claude-code-install.md) 讲安装，本文讲接入 DeepSeek
+> - [02](./02-claude-code-deepseek.md) 深入讲原理，本文侧重快速上手 + Cline 方案
+> - [05](./05-codex-deepseek.md) 讲的是 OpenAI 的 Codex，不是 Claude Code
+>
+> **AI 编程工具系列文章：**
+> | 编号 | 文章 | 一句话说明 |
+> |------|------|-----------|
+> | 01 | [安装 Claude Code](./01-claude-code-install.md) | 安装 Claude Code + 代理配置 |
+> | 02 | [Claude Code 接入 DeepSeek](./02-claude-code-deepseek.md) | 用 DeepSeek 模型跑 Claude Code 工具链 |
+> | **03** | **本文** | **Claude Code 方案 vs Cline 插件方案** |
+> | 04 | [Python 调用 AI API 入门](./04-python-ai-api-basics.md) | 用代码调用各家 AI 模型 |
+> | 05 | [Codex 接入 DeepSeek](./05-codex-deepseek.md) | OpenAI Codex 接入 DeepSeek + 多模型切换 |
+
 ---
 
 ## 两种方案对比
@@ -20,69 +36,14 @@
 
 ## 方案 A：Claude Code + DeepSeek V4 Pro
 
-### 原理
-
 把 Claude Code 的 API 请求重定向到 DeepSeek 服务器。工具链完全是 Claude Code 那套（文件读写、终端操作、多步任务），模型换成 DeepSeek V4 Pro。
 
-### 前置条件
+**完整配置步骤请看 [02-claude-code-deepseek](./02-claude-code-deepseek.md)**，那篇文章包含安装、环境变量配置、逐行解释和持久化方案。这里只列快速检查清单：
 
-- Node.js 18+（`node --version` 验证）
-- DeepSeek API Key（[platform.deepseek.com](https://platform.deepseek.com/api_keys)）
-
-### 第一步：安装 Claude Code CLI
-
-```powershell
-npm install -g @anthropic-ai/claude-code
-claude --version   # 看到版本号说明成功
-```
-
-### 第二步：安装 VS Code 插件
-
-1. 按 `Ctrl+Shift+X` 打开扩展商店
-2. 搜索 **Claude Code**，找到发布者是 **Anthropic** 的
-3. 点 **Install**
-
-### 第三步：配置 DeepSeek 环境变量
-
-**每次使用前在 VS Code 终端运行（临时生效）：**
-
-```powershell
-$env:ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic"
-$env:ANTHROPIC_AUTH_TOKEN="sk-你的DeepSeek API Key"
-$env:ANTHROPIC_MODEL="deepseek-v4-pro[1m]"
-$env:ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-v4-pro[1m]"
-$env:ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-v4-pro[1m]"
-$env:ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-v4-flash"
-$env:CLAUDE_CODE_SUBAGENT_MODEL="deepseek-v4-flash"
-$env:CLAUDE_CODE_EFFORT_LEVEL="max"
-```
-
-**永久生效（推荐）**：在项目根目录创建 `.claude/settings.json`：
-
-```json
-{
-  "env": {
-    "ANTHROPIC_AUTH_TOKEN": "sk-你的DeepSeek API Key",
-    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
-    "ANTHROPIC_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-flash",
-    "CLAUDE_CODE_EFFORT_LEVEL": "max",
-    "API_TIMEOUT_MS": "3000000",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
-  }
-}
-```
-
-### 第四步：启动
-
-```powershell
-claude
-```
-
-验证：输入 `/status`，显示 `deepseek-v4-pro[1m]` 则接入成功。
+1. 安装 Claude Code CLI：`npm install -g @anthropic-ai/claude-code`
+2. 安装 VS Code 扩展：扩展商店搜 `Claude Code`（Anthropic 发布）
+3. 配置环境变量或 `.claude/settings.json`（详见 [02](./02-claude-code-deepseek.md#核心配置环境变量方案)）
+4. 终端运行 `claude`，输入 `/status` 确认模型为 `deepseek-v4-pro[1m]`
 
 ### 能做什么
 
