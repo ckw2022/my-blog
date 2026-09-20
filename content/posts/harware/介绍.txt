@@ -1,0 +1,2 @@
+开发板原理图是复刻B站UP“点灯子曰”。具体链接如下https://www.bilibili.com/video/BV1D1A6zREtH/?spm_id_from=333.788.videopod.sections&vd_source=0fefc6b28a8d305ee77b859d2f2400af。
+PCB，原理图都是自己绘制的。
